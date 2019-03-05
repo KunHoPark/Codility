@@ -7,6 +7,29 @@ public class Sort {
     }
 
     /**
+     * Select Sort
+     * @param a
+     * @param n
+     */
+    void select_sort(int[]a, int n) {
+        int min;                                // 최소값을 저장.
+        int minindex;                           // 최소값의 인덱스를 저장
+
+        for(int i=0; i < n-1; i++) {
+            minindex = i;                       // 최소값의 초기 설정
+            min = a[i];
+            for (int j = 0; j < n; j++) {       // i 이후로 최소값을 찾음
+                if(min > a[j]) {                // 더 작은 값이 나타나면 바꿈
+                    min = a[j];
+                    minindex = j;
+                }
+            }
+            a[minindex] = a[i];                 // i 항과 min 항을 교환
+            a[i] = min;
+        }
+    }
+
+    /**
      * Shell Sort
      * @param a
      * @param n
